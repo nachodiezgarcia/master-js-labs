@@ -1,0 +1,47 @@
+@use "temaA" as *;
+@use "temaB";
+
+.container-1{
+    display: grid;
+    grid-template-columns: 5rem;
+    grid-auto-rows: 5rem;
+    gap: 20px;
+
+    .box{
+        border: 1px solid $base-border;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        font-family: 'Comic Sans MS';
+    }
+
+    .primary{
+        margin-top: 30px;
+        font-family: Verdana;
+        font-size: 14px;
+    }
+
+    .secondary{
+        font-family: Verdana;
+        font-size: 14px;
+    }
+
+    .base{
+        background-color: $base-color1;
+        color: $text-color;
+    }
+
+    .important{
+        background-color: darken($color: $base-color1, $amount: 20);
+        color: $text-color;
+    }
+
+    .warning{
+        background-color: lighten($color: $base-color1, $amount: 40);
+    }
+
+    .shadow{
+        @include sombra;
+    }
+}

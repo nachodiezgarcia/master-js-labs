@@ -1,0 +1,9 @@
+$base-color1: #0a4dde;
+$text-color: #fbeaff;
+$text-color2: grey;
+$base-border: black;
+$color-sombra: rgba(0, 0, 0, 0.69);
+
+@mixin sombra($shadow: 5px){
+    box-shadow: 6px 10px $shadow $color-sombra;
+}

@@ -1,0 +1,39 @@
+$base-color1: #ff9671;
+$text-color: #fbeaff;
+$text-color2: grey;
+
+$i:1;
+$oscuridad: 10;
+$light: 10;
+
+.container-1{
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+    div{
+        padding: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    @while $i <= 5{
+        @if $i<5{
+            div.darken-#{$i}{
+                background-color: darken($color: $base-color1, $amount: $oscuridad);
+                color: $text-color;                
+            }
+            div.lighten-#{$i}{
+                background-color: lighten($color: $base-color1, $amount: $light);
+                color: $text-color2; 
+            }
+        }
+        @if $i==5{
+            div.base-color{
+                background-color: $base-color1;
+                color: $text-color; 
+            }
+        }
+        $oscuridad: $oscuridad + 10;
+        $light: $light +5;
+        $i: $i + 1;
+    }
+}

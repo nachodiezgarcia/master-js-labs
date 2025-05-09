@@ -1,0 +1,44 @@
+$base-color1: #176392;
+$text-color: #fbeaff;
+$base-border: black;
+
+header{
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.general{
+    border: 8px solid $base-border;
+}
+
+.container-grid{
+    display: flex;
+    flex-direction: column;
+    .item{
+        display: flex;
+        justify-content: center;
+        background-color: $base-color1;
+        color: $text-color;
+        padding: 1rem;
+        padding-left: 4fr;
+        padding-right: 4fr;
+        &:hover {
+            background-color: darken($color: $base-color1, $amount: 15);
+        }
+    }
+}
+
+
+@media screen and (width>600px) {
+    .general{
+        border: none;
+    }
+    .container-grid{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .item{
+        flex:1;
+    }
+}
